@@ -82,8 +82,8 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Cornell University, NY, USA</span>
-            <span class="author-block"><sup>2</sup>ASAPP Research, NY, USA,</span>
+            <span class="author-block"><sup>1</sup>Cornell University</span>
+            <span class="author-block"><sup>2</sup>ASAPP Research</span>
             <span class="author-block"><sup>*</sup>Equal Contribution</span>
           </div>
 
@@ -91,7 +91,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2310.03720"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -100,7 +100,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2310.03720"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -120,7 +120,7 @@
               </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/asappresearch/webagents-step"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -146,7 +146,7 @@
     </div>
   </div>
 </section>
-<!-- 
+
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -154,34 +154,34 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Performing tasks on the web presents fundamental challenges to large language models (LLMs), including combinatorially large open-world tasks and variations across web interfaces. Simply specifying a large prompt to handle all possible behaviors and states is extremely complex, and results in behavior leaks between unrelated behaviors. Decomposition to distinct policies can address this challenge, but requires carefully handing off control between policies.
-          </p>
-          <p>
-            We propose Stacked LLM Policies for Web Actions (<span class="dnerf">SteP</span>), an approach to dynamically compose policies to solve a diverse set of web tasks. <span class="dnerf">SteP</span> defines a Markov Decision Process where the state is a <em>stack of policies</em> representing the control state, i.e., the chain of policy calls. Unlike traditional methods that are restricted to static hierarchies, <span class="dnerf">SteP</span> enables <em>dynamic</em> control that adapts to the complexity of the task. We evaluate <span class="dnerf">SteP</span> against multiple baselines and web environments including WebArena, MiniWoB++, and a CRM. On WebArena, SteP improves (14.9% to 35.8%) over SOTA that use GPT-4 policies, while on MiniWob++, SteP is competitive with prior works while using significantly less data.
-          </p>
+            While large language models (LLMs) show impressive decision-making abilities, current methods lack a mechanism for automatic self-improvement from errors during task execution. We propose (<b>LEAP</b>), an iterative fine-tuning framework that continually improves LLM agents using feedback from AI expert teachers. Our key insight is to equip the expert teachers with a <em>privileged state</em>  -- information available during training but hidden at test time. This allows even weak experts to provide precise guidance, significantly improving the student agent's performance without access to privileged information at test time.
+            We evaluate (<b>LEAP</b>) on diverse decision-making benchmarks, including text-based games, web navigation, and interactive coding. Our experiments show that (<b>LEAP</b>) (1) outperforms state-of-the-art baselines (2) enables weak student models (e.g., Llama3-8B) to exceed the performance of strong teacher models (GPT4-o), and (3) allows weak models to self-improve using privileged versions of themselves. We also provide a theoretical analysis showing that (<b>LEAP</b>)'s success hinges on balancing privileged information with the student’s realizability, which we empirically validate. 
         </div>
       </div>
     </div>
   </div>
-</section>  -->
+</section>  
 
-<!-- <section class="hero teaser">
+<section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/step_control_structure.png" alt="Control Structure Image" style="width: 100%; display: block;">
+      <img src="./static/images/leap_overall_approach.jpg" alt="Overall Approach Image" style="width: 100%; display: block;">
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">SteP</span> composes policies to solve complex web tasks, where policies can invoke each other.
+        <b>LEAP overview</b>. The LLM student agent interacts with the environment, generating a reason-action trajectory <span style="color: orange;">(in orange)</span> based on its policy π<sub>i-1</sub>. An expert teacher, with privileged state available only during training, evaluates and corrects the trajectory <span style="color: green;">(in green)</span>. These corrections update the learner's policy to π<sub>i</sub> through SFT/DPO training. The updated policy π<sub>i</sub> is then rolled out at test time without access to privileged state.
       </h2>
     </div>
+  </div>
+</section>
 
-    <div class="hero-body">
+
+    <!-- <div class="hero-body">
       <img src="./static/images/step_overall_approach.png" alt="Overall Approach Image" style="width: 100%; display: block;">
       <h2 class="subtitle has-text-centered">
         Example of <span class="dnerf">SteP</span> solving a web task in a Customer Management System (CMS) website. 
       </h2>
-    </div>
-  </div>
-</section> -->
+    </div> -->
+  <!-- </div>
+</section>  -->
 
 <!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
