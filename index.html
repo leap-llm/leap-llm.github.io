@@ -74,6 +74,8 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">Better than Your Teacher: LLM Agents that learn from Privileged AI Feedback</h1>
+          <h3 class="title is-4 conference-authors"><a target="_blank" href="https://iclr.cc/">ICLR
+            2025</a></h3>
           <div class="is-size-5 publication-authors">
             <span class="author-block"></span>
               <a href="https://sanjibanc.github.io/">Sanjiban Choudhury</a><sup>1,*</sup>,</span>
@@ -91,7 +93,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href=""
+                <a href="https://arxiv.org/pdf/2410.05434"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -100,7 +102,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href=""
+                <a href="https://arxiv.org/abs/2410.05434"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -147,53 +149,130 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            While large language models (LLMs) show impressive decision-making abilities, current methods lack a mechanism for automatic self-improvement from errors during task execution. We propose (<b>LEAP</b>), an iterative fine-tuning framework that continually improves LLM agents using feedback from AI expert teachers. Our key insight is to equip the expert teachers with a <em>privileged state</em>  -- information available during training but hidden at test time. This allows even weak experts to provide precise guidance, significantly improving the student agent's performance without access to privileged information at test time.
-            We evaluate (<b>LEAP</b>) on diverse decision-making benchmarks, including text-based games, web navigation, and interactive coding. Our experiments show that (<b>LEAP</b>) (1) outperforms state-of-the-art baselines (2) enables weak student models (e.g., Llama3-8B) to exceed the performance of strong teacher models (GPT4-o), and (3) allows weak models to self-improve using privileged versions of themselves. We also provide a theoretical analysis showing that (<b>LEAP</b>)'s success hinges on balancing privileged information with the student’s realizability, which we empirically validate. 
-        </div>
-      </div>
-    </div>
-  </div>
-</section>  
-
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/leap_overall_approach.jpg" alt="Overall Approach Image" style="width: 100%; display: block;">
-      <h2 class="subtitle has-text-centered">
+      <div class="columns has-text-centered">
+      <h1 class="title is-3">LEAP iteratively fine-tunes LLM agents using on-policy feedback from <i>privileged</i> AI teachers.</h1>
+      </div>
+      <img src="./static/images/leap_overall_approach_new.png" alt="Overall Approach Image" style="width: 100%; display: block;">
+      <h4 style="font-size: 1.0rem;">
         <b>LEAP overview</b>. The LLM student agent interacts with the environment, generating a reason-action trajectory <span style="color: orange;">(in orange)</span> based on its policy π<sub>i-1</sub>. An expert teacher, with privileged state available only during training, evaluates and corrects the trajectory <span style="color: green;">(in green)</span>. These corrections update the learner's policy to π<sub>i</sub> through SFT/DPO training. The updated policy π<sub>i</sub> is then rolled out at test time without access to privileged state.
-      </h2>
+      </h4>
     </div>
   </div>
 </section>
 
+<!-- ============================== -->
+  <!-- Abstract Section               -->
+  <!-- ============================== -->
+  <section class="hero" style="background-color: #f5f5f5; padding-top: 1em; padding-bottom: 1em; margin-bottom: 1.5em;">
+    <div class="hero-body" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-2 is-centered has-text-centered" style="margin-bottom: 0.75rem;">Abstract</h2>
+            <p style="text-align: justify; margin-bottom: 0.5rem;">
+              While large language models (LLMs) show impressive decision-making abilities, current methods lack a mechanism for automatic self-improvement from errors during task execution. We propose <b>LEAP</b>, an iterative fine-tuning framework that continually improves LLM agents using feedback from AI expert teachers. Our key insight is to equip the expert teachers with a <em>privileged state</em>  -- information available during training but hidden at test time. This allows even weak experts to provide precise guidance, significantly improving the student agent's performance without access to privileged information at test time.
+              We evaluate <b>LEAP</b> on diverse decision-making benchmarks, including text-based games, web navigation, and interactive coding. Our experiments show that <b>LEAP</b> (1) outperforms state-of-the-art baselines (2) enables weak student models (e.g., Llama3-8B) to exceed the performance of strong teacher models (GPT4-o), and (3) allows weak models to self-improve using privileged versions of themselves. We also provide a theoretical analysis showing that <b>LEAP</b>'s success hinges on balancing privileged information with the student’s realizability, which we empirically validate.   
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- <div class="hero-body">
-      <img src="./static/images/step_overall_approach.png" alt="Overall Approach Image" style="width: 100%; display: block;">
-      <h2 class="subtitle has-text-centered">
-        Example of <span class="dnerf">SteP</span> solving a web task in a Customer Management System (CMS) website. 
-      </h2>
-    </div> -->
-  <!-- </div>
-</section>  -->
 
-<!-- <section class="section" id="BibTeX">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-2 is-centered has-text-centered">Fine-tuning LLM Agents from AI Feedback</h2>
+        <div class="columns is-centered" style="margin: 0;">
+          <div class="column has-text-centered" style="padding: 0;">
+            <img src="./static/images/framework.png" alt="Framework" style="width: 100%; display: block;">
+          </div>
+        </div>
+        <div class="is-centered has-text-centered" style="margin-top: -0.5em; margin-bottom: 1.5em;">
+          <p style="text-align: justify; padding: 1em; border-left: 4px solid #B31B1B; background-color: #f9f9f9;">
+            <b>Challenge:</b> How can LLM teacher compute optimal corrections?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-2 is-centered has-text-centered"><span style="color: #B31B1B;">Key Idea:</span> Equip LLM Teacher with Privileged State </h2>
+        <div class="columns is-centered" style="margin: 0;">
+          <div class="column has-text-centered" style="padding: 0;">
+            <img src="./static/images/privileged_state.png" alt="Privileged State" style="width: 100%; display: block;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-2 is-centered has-text-centered">Evaluation</h2>
+        <div class="columns is-centered" style="margin: 0;">
+          <div class="column has-text-centered" style="padding: 0;">
+            <img src="./static/images/evaluation.png" alt="Evaluation" style="width: 100%; display: block;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-2 is-centered has-text-centered">Why does LEAP work?</h2>
+
+        <div class="columns is-centered" style="margin: 0;">
+          <div class="column has-text-centered" style="padding: 0;">
+            <img src="./static/images/balance_privileged_realizability.png" alt="balance_privileged_realizability" style="width: 100%; display: block;">
+          </div>
+        </div>
+        <div class="is-centered has-text-centered" style="margin-top: -0.5em; margin-bottom: 1.5em;">
+          <p style="text-align: justify; padding: 1em; border-left: 4px solid #B31B1B; background-color: #f9f9f9;">
+            <b>Hypothesis 1:</b> LEAP balances privileged information with realizable corrections
+          </p>
+        </div>
+
+        <div class="columns is-centered" style="margin: 0;">
+          <div class="column has-text-centered" style="padding: 0;">
+            <img src="./static/images/sft_privileged.png" alt="sft_privileged" style="width: 50%; margin: 0 auto;">
+          </div>
+        </div>
+        
+        <div class="is-centered has-text-centered" style="margin-top: -0.5em; margin-bottom: 1.5em;">
+          <p style="text-align: justify; padding: 1em; border-left: 4px solid #B31B1B; background-color: #f9f9f9;">
+            <b>Hypothesis 2:</b> LEAP provides on-policy corrections
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{sodhi2024step,
-  title     = {SteP: Stacked LLM Policies for Web Actions},
-  author    = {Sodhi, Paloma and Branavan, SRK and Artzi, Yoav and McDonald, Ryan},
-  journal   = {arXiv preprint arXiv:2310.03720},
-  year      = {2024},
-}</code></pre>
+    <pre><code>@inproceedings{choudhury2024better,
+    title={Better than Your Teacher: LLM Agents that learn from Privileged AI Feedback},
+    author={Choudhury, Sanjiban and Sodhi, Paloma},
+    booktitle={International Conference on Learning Representations (ICLR)}
+    journal={arXiv preprint arXiv:2410.05434},
+    year={2025}
+  }
+</code></pre>
   </div>
-</section>  -->
+</section>  
 
 <footer class="footer">
   <div class="container">
